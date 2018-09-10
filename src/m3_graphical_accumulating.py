@@ -9,8 +9,8 @@ Additionally, it emphasizes that you must
 before you can implement a solution to the problem in Python.
 
 Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Yuanning Zuo.
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -95,8 +95,25 @@ def draw_parallel_lines(n, point, length, window):
       :type length: int
       :type window: rg.RoseWindow
     """
+    len = 100
+    x = point.x
+    y = point.y
+    for k in range(4):
+        point = rg.Point(x, y)
+        line = rg.Line(rg.Point(50, 200 + (30 * k)), rg.Point(300, 200 + (30 * k)))
+        line.attach_to(window)
+        y = y - 30
+    for k in range(7):
+        point = rg.Point(x, y)
+        line1 = rg.Line(rg.Point(400, 50+(30*k)), rg.Point(500, 50+(30*k)))
+        line1.attach_to(window)
+        y = y - 30
+    window.render()
+
+
+
     # ------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # Done: 2. Implement and test this function.
     #          Tests have been written for you (above).
     #
     # CONSIDER using the ACCUMULATOR IN GRAPHICS pattern,
@@ -160,6 +177,15 @@ def draw_lines(n, point, window):
       :type point: rg.Point
       :type window: rg.RoseWindow
     """
+    x=point.x
+    y=point.y
+    for k in range(4):
+        point=rg.Point(x,y)
+        line=rg.Line(rg.Point(50,150),rg.Point(150,300-(80*k)))
+
+        line.attach_to(window)
+        y=y+50
+    window.render()
     # ------------------------------------------------------------------
     # TODO: 3. Implement and test this function.
     #          Tests have been written for you (above).
